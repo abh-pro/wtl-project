@@ -1,38 +1,90 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<meta charset="utf-8" />
 	<title>some homepage for now</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet"  href="style.css" />
 </head>
 <body>
 <header>
-	<center><h1>temporary bakchodi.com</h1></center>
-	<nav id="nav">
+	<!--<center><h1>temporary bakchodi.com</h1></center>
+<!--	<nav id="nav">
     	<ul id="navigation">
         	<li><a href="#" class="first">Home</a></li>
-        	<!--main part of the work and make this a nested part of ui in css-->
+        	<!--main part of the work and make this a nested part of ui in css
         	<li><a href="#">Brain Games</a>
             <ul>
                 <li><a href="#">Typing Test</a></li>
                 <li><a href="#">Situation Test</a></li>
                 <li><a href="#">Memory Game</a></li>
-                <li><a href="#">Sudoku</a></li><!--optional if permits-->
+                <li><a href="#">Sudoku</a></li><!--optional if permits
             </ul>
         </li>
-        <!--seprate website-->
+        <!--seprate website
         <li><a href="#">Fun Facts</a></li>
         <li><a href="#" class="last">Contact Us</a></li>
     </ul>
-	</nav>
+	</nav> -->
+	<div class="navbar">
+  <a href="#">Home</a>
+	<a href="#">About Us</a>
+
+  <div class="dropdown">
+    <button class="dropbtn">Brain Games
+      <i class="down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Typing Test</a>
+      <a href="#">Situation Test</a>
+      <a href="#">Memory Game</a>
+			<a href="#">Sudoku</a>
+    </div>
+  </div>
+	<a href="#">Fun Facts</a>
+	<a href="#">Contact Us</a>
+</div>
+<div class="bgimg1">
+		 <img src="css\img\denise-jans-HoqYAnwR-1g-unsplash.jpg">
+</div>
 </header>
 <main>
-	<br>
-	<h2 align="center">About Us</h2>
-	<!--complete the about us after wards-->
-	<p>Brain training may help improve your memory, response time, and logic skills.
+
+
+	<!-- complete the about us after wards-->
+
+	<!--<p>Brain training may help improve your memory, response time, and logic skills.
 <br />If you'd like to give your brain a workout and have fun too, try these games and activities that may improve your mental focus and fitness.</p>
-	<section class="tiles">
+	-->
+
+	  <div class="row">
+	    <div class="col-md-3 col-sm-6">
+	      <div class="card card-block">
+	      <h4 class="card-title text-right"><i class="material-icons">Typing Test</i></h4>
+	    <img src="css\img\glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg">
+			  <p class="card-text">a javascript supported typing speed calculator.</p>
+	  </div>
+	    </div>
+
+	    <div class="col-md-3 col-sm-6">
+	      <div class="card card-block">
+	      <h4 class="card-title text-right"><i class="material-icons">What would you do ?</i></h4>
+	    <img src="css\img\bonneval-sebastien-1OqbKqQ8C6I-unsplash.jpg">
+	        <p class="card-text">Situation test to judge the proficiency of brain speed and everything</p>
+	  </div>
+	    </div>
+	    <div class="col-md-3 col-sm-6">
+	      <div class="card card-block">
+	      <h4 class="card-title text-right"><i class="material-icons">Memory Test</i></h4>
+	    <img src="css\img\daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg">
+          <p class="card-text">various mathematcial equations are provided and should be done in certain <br> time and depending on the speed of the user the score is calculated.. </p>
+	  </div>
+	    </div>
+
+	  </div>
+
+
+
+<!--	<section class="tiles">
 		<article class="style1">
 			<span class="image">
 					<img src="images/pic01.jpg" alt="typing test image" />
@@ -68,7 +120,7 @@
 					<div class="content">
 						<p>Play a simple Sudoku game</p>
 					</div>
-		</article>
+		</article>-->
 
 </main>
 <footer>
