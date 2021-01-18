@@ -1,22 +1,22 @@
-<navbar class="navbar">
-      <a href="index.html">Home</a>
+<div class="navBar">
+      <a href="Index.php">Home</a>
 
-      <a href="aboutus.html">About Us</a>
+      <a href="AboutUs.php">About Us</a>
 
-      <div class="dropdown">
+      <div class="dropDown">
             <button class="dropbtn">Brain Games
                   <i class="down"></i>
             </button>
 
-            <div class="dropdown-content">
-                  <a href="braingames.html">Typing Test</a>
-                  <a href="braingames.html">Situation Test</a>
-                  <a href="braingames.html">Memory Game</a>
+            <div class="dropdownContent">
+                  <a href="TypingTest.php">Typing Test</a>
+                  <a href="BrainGames.php">Situation Test</a>
+                  <a href="BrainGames.php">Memory Game</a>
                   <!--<a href="#">Sudoku</a>    optional-->
             </div>
       </div>
 
-      <a href="funfact.html">Fun Facts</a>
+      <a href="FunFact.php">Fun Facts</a>
 
-      <a href="contactus.html">Contact Us</a>
-</navbar>
+      <a href="ContactUs.php">Contact Us</a>
+</div>

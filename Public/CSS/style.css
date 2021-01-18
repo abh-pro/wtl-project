@@ -3,13 +3,13 @@ body
       font-family: sans-serif,Arial, Helvetica;
 }
 
-.navbar
+.navBar
 {
       overflow: hidden;
       background-color: #333;
 }
 
-.navbar a
+.navBar a
 {
       float: left;
       font-size: 16px;
@@ -18,17 +18,17 @@ body
       padding: 14px 16px;
       text-decoration: none;
       margin-left: 10%;
-      
+
 }
 
-.dropdown
+.dropDown
 {
       float: left;
       overflow: hidden;
       margin-left: 10%;
 }
 
-.dropdown .dropbtn
+.dropDown .dropbtn
 {
       font-size: 16px;
       border: none;
@@ -40,12 +40,12 @@ body
       margin-left: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn
+.navBar a:hover, .dropDown:hover .dropbtn
 {
       background-color: red;
 }
 
-.dropdown-content
+.dropdownContent
 {
       display: none;
       position: absolute;
@@ -55,7 +55,7 @@ body
       z-index: 1;
 }
 
-.dropdown-content a
+.dropdownContent a
 {
       float: none;
       color: black;
@@ -65,12 +65,12 @@ body
       text-align: left;
 }
 
-.dropdown-content a:hover
+.dropdownContent a:hover
 {
       background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content
+.dropDown:hover .dropdownContent
 {
       display: block;
 }
@@ -98,14 +98,14 @@ div [class^="col-"]
 
 .row
 {
-      display: inline-block;
+    padding: 10px;
 }
 
 .card
 {
       transition:0.5s;
       cursor:pointer;
-      background-color: #faa04f
+      background-color: #faa04f;
 }
 
 .card-title
@@ -176,4 +176,74 @@ footer
       background-color: grey;
       color: white;
       text-align: center;
+}
+
+/*CSS for form on contact us page
+    Reusable classes
+*/
+.center{
+    text-align: center;
+}
+.form-center {
+  text-align: center;
+  padding: 20px;
+}
+.col
+{
+  float: left;
+  margin-top: 6px;
+}
+.col-25{
+  width: 25%;
+}
+.col-75{
+    width: 75%;
+}
+.form-input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  float: right;
+  border-radius: 5px;
+}
+.form-label{
+    width: 100%;
+    padding: 12px 12px 12px 0;
+    display: block;
+    float: left;
+    margin: 8px 0;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+abbr{
+    color: red;
+}
+.btn
+{
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 15px 30px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.btn-submit
+{
+    border-color: darkgreen;
+    color: green;
+    background-color: #fff;
+}
+.btn-danger
+{
+    border-color: darkred;
+    color: red;
+    background-color: #fff;
 }

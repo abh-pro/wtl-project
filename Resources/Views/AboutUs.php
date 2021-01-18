@@ -5,15 +5,15 @@
 
             <title>Brain Games</title>
 
-            <link rel="stylesheet" type="text/css" href="../css/style.css">
+            <link rel="stylesheet" type="text/css" href="../../Public/CSS/style.css">
       </head>
 
       <body>
             <header>
-                  <?php include_once('../Layouts/Navbar.php') ?>
+                  <?php include('../Layouts/Navbar.php') ?>
 
                   <div class="bgimg1">
-                        <img src="..\css\img\denise-jans-HoqYAnwR-1g-unsplash.jpg">
+                        <img src="../../Public/Images/denise-jans-HoqYAnwR-1g-unsplash.jpg">
                   </div>
             </header>
 
@@ -21,8 +21,6 @@
 
             </main>
 
-            <footer>
-                  <i>Made in conjunction with abhishek,diksha,mitesh,prathamesh,shreekant.</i>
-            </footer>
+            <?php include_once('../Layouts/Footer.php') ?>
       </body>
 </html>

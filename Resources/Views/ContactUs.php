@@ -5,34 +5,12 @@
 
             <title>Brain Games</title>
 
-            <link rel="stylesheet" type="text/css" href="../css/style.css">
-
+			<link rel="stylesheet" type="text/css" href="../../Public/CSS/style.css">
 	</head>
 
 	<body>
 		<header>
-			<div class="navbar">
-                        <a href="index.html">Home</a>
-
-                        <a href="aboutus.html">About Us</a>
-
-                        <div class="dropdown">
-                              <button class="dropbtn">Brain Games
-                                    <i class="down"></i>
-                              </button>
-
-                              <div class="dropdown-content">
-                                    <a href="braingames.html">Typing Test</a>
-                                    <a href="braingames.html">Situation Test</a>
-                                    <a href="braingames.html">Memory Game</a>
-                                    <!--<a href="#">Sudoku</a>    optional-->
-                              </div>
-                        </div>
-
-                        <a href="funfact.html">Fun Facts</a>
-
-                        <a href="contactus.html">Contact Us</a>
-                  </div>
+			<?php include('../Layouts/Navbar.php') ?>
 
 			<!--
                   <div class="bgimg1">
@@ -53,34 +31,41 @@
 
 			<hr>
 
-			<div class="form-cont"><!--from CSS centre it and just add some line breaks in the form-->
-				<form>
-					<legend>Drop us a line.</legend>
+			<div class="form-center"><!--from CSS centre it and just add some line breaks in the form-->
+				<form action="#" method="post">
+					<legend>Drop us a line.</legend><br>
+					<div class="row">
+						<div class="col col-25">
+							<label class="form-label" for="name">Your Name  <strong><abbr title="required" aria-label="required">*</abbr></strong></label>
+						</div>
+						<div class="col col-75">
+							<input class="form-input" type="text" name="name" id="name" placeholder="John Smith" required>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col col-25">
+							<label class="form-label" for="email">Your Email  <strong><abbr title="required" aria-label="required">*</abbr></strong></label>
+						</div>
+						<div class="col col-75">
+							<input class="form-input" type="email" name="email" id="email" required placeholder="example@example.com">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col col-25">
+							<label class="form-label" for="reason">How can we Help  <strong><abbr title="required" aria-label="required">*</abbr></strong></label>
+						</div>
+						<div class="col col-75">
+							<input class="form-input" type="text" name="reason" required id="reason" placeholder="Input reason Here....">
+						</div>
+					</div>
 					<br>
-
-					<label for="name">Your Name:</label>
-						<br>
-						<input type="name" name="name" id="name" placeholder="John Smith">
-						<br>
-
-					<label for="email">Your Email:<strong><abbr title="required" aria-label="required">*</abbr></strong></label>
-						<br>
-						<input type="email" name="email" id="email" required="1" placeholder="example@example.com">
-						<br>
-
-					<label for="reason">How can we Help:</label><strong><abbr title="required" aria-label="required">*</abbr></strong>
-						<br>
-						<input type="text" name="reason" required="1" id="reason" placeholder="Input reason Here....">
-						<br>
-
-					<br>
-					<input type="button" name="submit" value="submit"><!--just increase the size of this text box from CSS-->
+					<input class="btn btn-submit" type="submit" name="submit" value="submit">
 				</form>
 			</div>
 		</main>
 
-		<footer>
-			<i>Made in conjunction with abhishek,diksha,mitesh,prathamesh,shreekant.</i>
-		</footer>
+		<?php include_once('../Layouts/Footer.php') ?>
 	</body>
 </html>

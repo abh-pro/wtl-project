@@ -1,0 +1,52 @@
+
+.header{
+margin-bottom: 20px;
+font-size: 3rem;
+color: black;
+text-align: center;
+}
+
+.textDisplay {
+background-color: #faa04f;
+font-size: 1.5rem;
+margin: 15px;
+padding: 15px;
+box-shadow: black 5px 8px 5px;
+height: 100%;
+min-height: 400px;
+}
+
+.textInput {
+background-color: #fff;
+font-size: 1.5rem;
+margin: 15px;
+padding: 15px;
+border: 1px solid black;
+box-shadow: black 5px 8px 5px;
+height: 100%;
+min-height: 400px;
+width: 100%;
+}
+
+.incorrectText {
+color: red;
+text-decoration: underline;
+}
+
+.correctText {
+color: darkgreen;
+}
+
+.header_text {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.scoreBox{
+    width: 80%;
+    margin: 10px;
+    height: 100px;
+    background-color: #faa04f;
+}

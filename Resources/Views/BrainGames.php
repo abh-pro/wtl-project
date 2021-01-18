@@ -5,37 +5,18 @@
 
             <title>Brain Games</title>
 
-            <link rel="stylesheet" type="text/css" href="../css/style.css">
+            <link rel="stylesheet" type="text/css" href="../../Public/CSS/style.css">
 
       </head>
 
       <body>
             <header>
-                  <div class="navbar">
-                        <a href="index.html">Home</a>
+                  <?php include('../Layouts/Navbar.php') ?>
 
-                        <a href="aboutus.html">About Us</a>
 
-                        <div class="dropdown">
-                              <button class="dropbtn">Brain Games
-                                    <i class="down"></i>
-                              </button>
-
-                              <div class="dropdown-content">
-                                    <a href="braingames.html">Typing Test</a>
-                                    <a href="braingames.html">Situation Test</a>
-                                    <a href="braingames.html">Memory Game</a>
-                                    <!--<a href="#">Sudoku</a>    optional-->
-                              </div>
-                        </div>
-
-                        <a href="funfact.html">Fun Facts</a>
-
-                        <a href="contactus.html">Contact Us</a>
-                  </div>
 
                   <div class="bgimg1">
-                        <img src="..\css\img\denise-jans-HoqYAnwR-1g-unsplash.jpg">
+                        <img src="../../Public/Images/denise-jans-HoqYAnwR-1g-unsplash.jpg">
                   </div>
             </header>
 
@@ -43,8 +24,6 @@
 
             </main>
 
-            <footer>
-                  <i>Made in conjunction with abhishek,diksha,mitesh,prathamesh,shreekant.</i>
-            </footer>
+            <?php include_once('../Layouts/Footer.php') ?>
       </body>
 </html>

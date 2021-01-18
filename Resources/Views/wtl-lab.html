@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+      <head>
+            <meta charset="utf-8">
+
+            <title>Brain Games</title>
+
+            <link rel="stylesheet" type="text/css" href="../../Public/CSS/style.css">
+      </head>
+
+      <body>
+            <header>
+                <div class="navbar">
+                      <a href="Index.php">Home</a>
+
+                      <a href="AboutUs.php">About Us</a>
+
+                      <div class="dropdown">
+                            <button class="dropbtn">Brain Games
+                                  <i class="down"></i>
+                            </button>
+
+                            <div class="dropdown-content">
+                                  <a href="BrainGames.php">Typing Test</a>
+                                  <a href="BrainGames.php">Situation Test</a>
+                                  <a href="BrainGames.php">Memory Game</a>
+                                  <!--<a href="#">Sudoku</a>    optional-->
+                            </div>
+                      </div>
+
+                      <a href="FunFact.php">Fun Facts</a>
+
+                      <a href="ContactUs.php">Contact Us</a>
+                </div>
+
+
+                  <div class="bgimg1">
+                        <img src="../../Public/Images/denise-jans-HoqYAnwR-1g-unsplash.jpg">
+                  </div>
+
+            </header>
+
+            <main>
+                  <!-- complete the about us after wards-->
+
+                  <!--<p>Brain training may help improve your memory, response time, and logic skills.
+                  <br />If you'd like to give your brain a workout and have fun too, try these games and activities that may improve your mental focus and fitness.</p>
+                  -->
+
+                  <div class="container">
+                        <div class="row">
+                            <div class="col-75">
+                              <div class="card card-block">
+                                    <h4 class="card-title text-right"><i class="material-icons">Typing Test</i></h4>
+
+                                    <div class="sidesimg">
+                                          <img src="../../Public/Images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg">
+                                    </div>
+
+                                    <div class="sidestxt">
+                                          <p class="card-text">a javascript supported typing speed calculator.</p>
+                                    </div>
+                                  </div>
+                                   <button type="button" name="button" onclick="changecss()">change css</button>
+                            </div>
+                        </div>
+
+                        <div class="row" id="div2">
+                            <div class="col-75">
+                              <div class="card card-block" >
+                                    <h4 class="card-title text-right"><i class="material-icons">What would you do ?</i></h4>
+
+                                    <div class="sidesimg">
+                                          <img src="" class="img1">
+
+                                          <button type="button" name="button" onclick="loadimg()">Load Image</button>
+                                    </div>
+
+                                    <div class="sidestxt">
+                                          <p class="card-text">Situation test to judge the proficiency of brain speed and everything</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="del">
+
+                            <div class="col-75">
+                              <div class="card card-block">
+                                    <h4 class="card-title text-right"><i class="material-icons" id="text1">Memory Test</i></h4>
+                                    <button type="button" name="button" onclick="del()">Delete</button>
+                                    <div class="sidesimg" id="memory_test">
+                                          <img src="">
+                                    </div>
+
+                                    <div class="sidestxt">
+                                          <p class="card-text">Various mathematcial equations are provided and should be done in certain time and depending on the speed of the user the score is calculated.. </p>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+                  </div>
+            </main>
+
+            <footer> <i>Made in conjunction with Abhishek,Diksha,Mitesh,Prathamesh and Shreekant.</i> </footer>
+
+</body>
+<script type="text/javascript">
+    var textField = document.getElementById("text1");
+    textField.innerHTML = "MEMORY TEST";
+
+    document.getElementById("memory_test").getElementsByTagName("img")[0].src = "../../Public/Images/daria-nepriakhina-zoCDWPuiRuA-unsplash.jpg";
+    function loadimg(){
+        document.getElementsByClassName("img1")[0].src = "../../Public/Images/bonneval-sebastien-1OqbKqQ8C6I-unsplash.jpg";
+    }
+    function changecss(){
+        var mydiv = document.getElementById("div2");
+        mydiv.style.backgroundColor  = "green";
+        mydiv.style.height = "400px";
+    }
+    function del(){
+        document.getElementById("del").remove();
+    }
+</script>
+ </html>
