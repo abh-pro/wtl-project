@@ -1,0 +1,28 @@
+.header{
+margin-bottom: 20px;
+font-size: 3rem;
+color: black;
+text-align: center;
+}
+#mem-game
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.mem-card{
+    padding: 10px;
+    cursor: pointer;
+    background: #e5e5e5;
+}
+.mem-card.open{background: #fea;}
+.mem-card.right{background: #b3ffc0;}
+.mem-card.wrong{background: #ffb6b6;}
+#win-text
+{
+    background-color: red;
+    font-family: "Times New Roman",Times, serif;
+}
