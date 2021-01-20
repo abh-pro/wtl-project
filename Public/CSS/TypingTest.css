@@ -1,7 +1,7 @@
 
 .header{
 margin-bottom: 20px;
-font-size: 3rem;
+font-size: 2rem;
 color: black;
 text-align: center;
 }
@@ -12,8 +12,7 @@ font-size: 1.5rem;
 margin: 15px;
 padding: 15px;
 box-shadow: black 5px 8px 5px;
-height: 100%;
-min-height: 400px;
+height: 350px;
 }
 
 .textInput {
@@ -23,30 +22,34 @@ margin: 15px;
 padding: 15px;
 border: 1px solid black;
 box-shadow: black 5px 8px 5px;
-height: 100%;
-min-height: 400px;
+height: 350px;
 width: 100%;
 }
 
-.incorrectText {
+.incorrect_word {
 color: red;
 text-decoration: underline;
 }
 
-.correctText {
-color: darkgreen;
+.correct_word {
+color: #29a329;
 }
 
 .header_text {
   text-transform: uppercase;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
   text-align: center;
 }
 
 .scoreBox{
     width: 80%;
     margin: 10px;
-    height: 100px;
+    height: 60px;
     background-color: #faa04f;
+}
+#btn-reset{
+    width: 80%;
+    height: 60px;
+    margin: 10px;
 }

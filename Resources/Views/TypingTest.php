@@ -18,12 +18,12 @@
 
         <br>
         <div class="header">
-            Brain Games - Typing Test
+            Typing Test
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-2 offset-md-1 pr-0 pl-0 scoreBox">
                 <div class="header_text">Timer</div>
-                <div class="header_text" id="time"></div>
+                <div class="header_text" id="time">60 S</div>
             </div>
             <div class="col-md-2 pr-0 pl-0 scoreBox">
                 <div class="header_text">WPM</div>
@@ -31,7 +31,14 @@
             </div>
             <div class="col-md-2 pr-0 pl-0 scoreBox">
                 <div class="header_text">Errors</div>
-                <div class="header_text" id="errors"></div>
+                <div class="header_text" id="errors">0</div>
+            </div>
+            <div class="col-md-2 pr-0 pl-0 scoreBox">
+                <div class="header_text">Accuracy</div>
+                <div class="header_text" id="accuracy">100</div>
+            </div>
+            <div class="col-md-2 pr-0 pl-0">
+                <button type="button" class="btn btn-info" id="btn-reset" onclick="resetGame()">Reset</button>
             </div>
 
         </div>
@@ -42,7 +49,7 @@
                 </div>
             </div>
             <div class="col-md-6 pl-0">
-                <textarea type="text" name="textInput" class="textInput" id="textInput" onfocus="startGame()"></textarea>
+                <textarea type="text" name="textInput" class="textInput" id="textInput" onfocus="startGame()" onkeypress="checkInput()"></textarea>
             </div>
         </div>
     </div>

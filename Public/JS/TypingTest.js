@@ -1,138 +1,175 @@
 
 let TIME_LIMIT = 60;
 
-let quotes_array = [
-  "Push yourself, because no one else is going to do it for you.",
+let lines_array = [
+  "Whatever you are, be a good one.",
   "The quick brown fox jumps over the lazy dog.",
-  "Failure is the condiment that gives success its flavor.",
+  "Be the change you wish to see in the world.",
   "Wake up with determination. Go to bed with satisfaction.",
   "It's going to be hard, but hard does not mean impossible.",
   "Learning never exhausts the mind.",
-  "The only way to do great work is to love what you do."
+  "Try and fail, but never fail to try."
 ];
 
-
+//Selecting required elements
 let wpm_text = document.getElementById("wpm");
 let errors_text = document.getElementById("errors");
+let accuracy_text = document.getElementById("accuracy");
 let textDisplay = document.getElementById("textDisplay");
 let textInput = document.getElementById("textInput");
 let timer_text = document.getElementById("time")
 
+//Declaring required variables
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
 let total_errors = 0;
 let errors = 0;
 let wpm=0;
-let current_quote = "";
+let current_line= "";
 let quoteNo = 0;
 let timer = null;
-let characterTyped = 0;
+let wordCount = "";
+let lineNo = 0;
+let accuracy = 0;
 
+textInput.value = '';
 
-function changeQuote() {
-  textDisplay.textContent = null;
-  current_quote = quotes_array[quoteNo];
+//start game function
+function startGame(){
+    resetGame();
+    changeLine();
 
-  current_quote.split('').forEach(char => {
-    const charSpan = document.createElement('span')
-    charSpan.innerText = char
-    textDisplay.appendChild(charSpan)
-  })
-
-  if (quoteNo < quotes_array.length - 1)
-    quoteNo++;
-  else
-    quoteNo = 0;
+    clearInterval(timer);
+    timer = setInterval(updateTimer,1000);
 }
 
-function chectTypedText() {
-
-curr_input = textInput.value;
-curr_input_array = curr_input.split('');
-
-characterTyped++;
-
-errors = 0;
-
-quoteSpanArray = textDisplay.querySelectorAll('span');
-quoteSpanArray.forEach((char, index) => {
-	let typedText = curr_input_array[index]
-	if (typedText == null)
-    {
-	       char.classList.remove('correct_char');
-	       char.classList.remove('incorrect_char');
-	}
-    else if (typedText === char.innerText)
-    {
-	       char.classList.add('correct_char');
-	       char.classList.remove('incorrect_char');
-	}
-    else
-    {
-	       char.classList.add('incorrect_char');
-	       char.classList.remove('correct_char');
-	       errors++;
-	}
-});
-
-    error_text.textContent = total_errors + errors;
-
-    let correctCharacters = (characterTyped - (total_errors + errors));
-    let accuracyVal = ((correctCharacters / characterTyped) * 100);
-    accuracy_text.textContent = Math.round(accuracyVal);
-
-    if (curr_input.length == current_quote.length)
-    {
-	   changeQuote();
-	   total_errors += errors;
-	   textInput.value = "";
-    }
-}
-
-function startGame() {
-
-resetValues();
-changeQuote();
-clearInterval(timer);
-timer = setInterval(updateTimer, 1000);
-}
-
-function resetValues() {
+//reset function
+function resetGame(){
     let timeLeft = TIME_LIMIT;
     let timeElapsed = 0;
+    let total_errors = 0;
     let errors = 0;
     let wpm=0;
-    let current_quote = "";
+    let current_line= "";
     let quoteNo = 0;
     let timer = null;
-    textInput.disabled = false;
+    let wordCount = 0;
+    let lineNo = 0;
 
-    time.value = "";
-    wpm.value = "";
-    errors_text.value = "";
-    textDisplay.value = "";
-    textInput.value = "";
+    textInput.value = '';
+
+    textInput.disabled = false;
+    textDisplay.textContent = "Click in Typing Box to start test.";
+    accuracy_text.textContent = 100;
+    timer_text.textContent = timeLeft + " S";
+    errors_text.textContent = 0;
+
+    clearInterval(timer);
 }
+
+//update timer
 
 function updateTimer() {
-    if (timeLeft > 0)
-    {
-    	timeLeft--;
-    	timeElapsed++;
-    	timer_text.textContent = timeLeft + "s";
-    }
-    else
-    {
-    	finishGame();
-    }
+  if (timeLeft > 0) {
+    timeLeft--;
+    timeElapsed++;
+    timer_text.textContent = timeLeft + " S";
+  }
+  else {
+    // finish the game
+    finishGame();
+  }
 }
 
-function finishGame() {
+//finish game function
+function finishGame(){
     clearInterval(timer);
     textInput.disabled = true;
     textDisplay.textContent = "Click in Typing Box to start test.";
-
-    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+    wpm = Math.round((((wordCount) / timeElapsed) * 60));
     wpm_text.textContent = wpm;
-    errors_text.textContent = total_errors;
+}
+
+//Load lines to type
+function changeLine(){
+    textInput.textContent = '';
+    current_line = lines_array[lineNo];
+    textDisplay.textContent = '';
+
+    //split line into elements for each word
+    current_line.split(' ').forEach((word, i) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.innerText = word + ' ';
+        textDisplay.appendChild(wordSpan);
+    });
+    textInput.value = '';
+
+    if (lineNo < 6){
+        lineNo++;
+    }
+    else {
+        lineNo = 0;
+    }
+
+}
+
+//check typed text
+function checkInput(){
+    let key = window.event.keyCode;
+    if (key == 32){
+        checkLine(key);
+    }
+}
+
+function checkLine(){
+    input_line = textInput.value;
+    input_word_array = input_line.split(' ');
+
+    wordCount++;
+    errors = 0;
+
+    word_span_array = textDisplay.querySelectorAll('span');
+    word_span_array.forEach((word, index) => {
+        let typed_word = input_word_array[index];
+
+        // word not currently typed
+        w1 = String(typed_word);
+        w2 = String(word.innerText.trim());
+        if (w1 == null || w1 == 'undefined')
+        {
+            word.classList.remove('correct_word');
+            word.classList.remove('incorrect_word');
+        }
+        // correct word
+        else if (w1 == w2)
+        {
+            word.classList.add('correct_word');
+            word.classList.remove('incorrect_word');
+        }
+        // incorrect word
+        else
+        {
+            word.classList.add('incorrect_word');
+            word.classList.remove('correct_word');
+            errors++;
+        }
+    });
+
+    //update errors count and accuracy
+    errors_text.textContent = total_errors + errors;
+    let correctWords = (wordCount - (total_errors+errors));
+    let accuracyPerc = (correctWords / wordCount)*100;
+    if (accuracy<0) {
+        accuracy_text.textContent = '0';
+    }
+    else {
+        accuracy_text.textContent = Math.round(accuracyPerc);
+    }
+
+    //if line is completed change line
+    if (input_line.length == current_line.length) {
+        total_errors += errors;
+        textInput.value = '';
+        setTimeout(changeLine(), 20000);
+    }
 }
