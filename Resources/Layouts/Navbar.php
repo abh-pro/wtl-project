@@ -11,7 +11,7 @@
             <div class="dropdownContent">
                   <a href="TypingTest.php">Typing Test</a>
                   <a href="BrainGames.php">Situation Test</a>
-                  <a href="FunFact.php">Memory Game</a>
+                  <a href="MemoryGames.php">Memory Game</a>
                   <!--<a href="#">Sudoku</a>    optional-->
             </div>
       </div>
