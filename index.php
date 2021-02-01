@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -22,7 +24,7 @@
         <!--NavBar-->
         <header>
             <div class="header-top">
-                <?php session_start(); include('Header.php') ?>
+                <?php include('Header.php') ?>
                 <section class="slider_section">
                     <div class="banner_main">
 

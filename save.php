@@ -27,13 +27,22 @@ if (($_POST["id"] ?? false) && ($_POST["heading"] ?? false) && ($_POST["descp"] 
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 // query
+                    if (isset($_POST['insert'])) {
+                        $stmt = $conn->prepare("INSERT INTO facts(heading,descp) values(?,?)");
+                        $stmt->execute([$heading,$descp]);
+                        $_SESSION['success'] = "Record Inserted";
+                        header("location: admin.php");
+                        exit();
+                    }
+                    else {
+                        $stmt = $conn->prepare("UPDATE facts set heading=?, descp=? where id=?");
+                        $stmt->execute([$heading,$descp,$id]);
+                        $_SESSION['success'] = "Record updated";
+                        header("location: admin.php");
+                        exit();
+                    }
 
-                    $stmt = $conn->prepare("UPDATE facts set heading=?, descp=? where id=?");
-                    $stmt->execute([$heading,$descp,$id]);
 
-                    $_SESSION['success'] = "Record updated";
-                    header("location: admin.php");
-                    exit();
 
 
             } catch(PDOException $e) {

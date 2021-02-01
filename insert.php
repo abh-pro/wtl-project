@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="titlepage">
-                            <h3 style="color:black;">Update</h3>
+                            <h3 style="color:black;">Add New</h3>
                         </div>
                     </div>
                 </div>
@@ -44,13 +44,14 @@
                                             <input class="contactus" placeholder="Heading" type="text" name="heading" required>
                                         </div>
                                         <div class="col-sm-12">
-                                            <textarea class="contactus" placeholder="Description" name="desc" required></textarea>
+                                            <textarea class="contactus" placeholder="Description" name="descp" required></textarea>
                                         </div>
                                         <div class="col-sm-12">
                                             <!-- <input class="contactus" type="file" name="image" required> -->
                                         </div>
                                         <div class="col-sm-12">
                                             <input type="hidden" name="insert" value="1">
+                                            <input type="hidden" name="id" value="-1">
                                             <button class="btn btn-success">Submit</button>
                                         </div>
                                     </div>

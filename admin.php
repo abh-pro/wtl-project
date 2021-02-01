@@ -42,13 +42,13 @@
                 <?php include('Header.php') ?>
             </div>
         </header>
-        <div class="error float-right">
+        <div class="error">
             <?php if (isset($_SESSION['error'])) {
                 echo $_SESSION['error'];
                 unset($_SESSION['error']);
             } ?>
         </div>
-        <div class="success float-right">
+        <div class="success">
             <?php if (isset($_SESSION['success'])) {
                 echo $_SESSION['success'];
                 unset($_SESSION['success']);
@@ -56,7 +56,7 @@
         </div>
 
         <!--Content-->
-        <?php if (isset($facts)) {
+        <?php if (count($facts) != 0) {
             foreach ($facts as $fact) {
 
 
@@ -94,7 +94,18 @@
                     </div>
                 </div>
             </div>
-        <?php }} ?>
+        <?php }}
+        else {
+            ?>
+            <div class="row text-center justify-content-center">
+                <form class="" action="insert.php" method="post">
+                    <button type="submit" class="btn btn-success">Add New</button>
+                </form>
+            </div>
+            <?php
+
+        }
+         ?>
 
         <!--Footer-->
         <?php include('Footer.php') ?>
