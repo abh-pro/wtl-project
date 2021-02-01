@@ -31,8 +31,8 @@
                             <div class="address">
                                 <h3>Play Games</h3>
                                 <ul class="Links_footer">
-                                    <li> <a href="index.html">Typing Test </a> </li>
-                                    <li> <a href="#">Memory Game</a> </li>
+                                    <li> <a href="Typing.php">Typing Test </a> </li>
+                                    <li> <a href="Memory.php">Memory Game</a> </li>
                                 </ul>
                             </div>
                         </div>
