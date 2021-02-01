@@ -1,0 +1,48 @@
+.textDisplay {
+background-color: #b4c6fc;
+font-size: 1.5rem;
+margin: 15px;
+padding: 15px;
+box-shadow: black 5px 8px 5px;
+height: 350px;
+}
+
+.textInput {
+background-color: #fff;
+font-size: 1.5rem;
+margin: 15px;
+padding: 15px;
+border: 1px solid black;
+box-shadow: black 5px 8px 5px;
+height: 350px;
+width: 100%;
+}
+
+.incorrect_word {
+color: red;
+text-decoration: underline;
+}
+
+.correct_word {
+color: #05c11c;
+}
+
+.header_text {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.scoreBox{
+    width: 80%;
+    margin: 10px;
+    height: 60px;
+    background-color: #2344e8;
+    color: whitesmoke;
+}
+#btn-reset{
+    width: 80%;
+    height: 60px;
+    margin: 10px;
+}
