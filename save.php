@@ -16,9 +16,10 @@
     }
 
 
-    if (($_POST["id"] ?? false) && ($_POST["heading"] ?? false) && ($_POST["desc"] ?? false) /*&& ($_POST["image"] ?? false)*/) {
+if (($_POST["id"] ?? false) && ($_POST["heading"] ?? false) && ($_POST["descp"] ?? false)) {
             $heading = input_check($_POST["heading"]);
-            $desc = input_check($_POST["desc"]);
+            $descp = input_check($_POST["descp"]);
+            $id = input_check($_POST['id']);
 
             //insert
             try {
@@ -26,22 +27,14 @@
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 // query
-                if (isset($_POST['insert'])) {
-                    $stmt = $conn->prepare("INSERT into facts(heading,desc) values(?,?)");
-                    $stmt->execute([$heading,$desc]);
 
-                    $_SESSION['success'] = "Record inserted";
-                    header("location: admin.php");
-                    exit();
-                }
-                else{
-                    $stmt = $conn->prepare("UPDATE facts set heading=? and desc=? where id=?");
-                    $stmt->execute([$heading,$desc,$id]);
+                    $stmt = $conn->prepare("UPDATE facts set heading=?, descp=? where id=?");
+                    $stmt->execute([$heading,$descp,$id]);
 
                     $_SESSION['success'] = "Record updated";
                     header("location: admin.php");
                     exit();
-                }
+
 
             } catch(PDOException $e) {
                 $_SESSION['error'] =  $e->getMessage();
@@ -49,5 +42,10 @@
                 exit();
             }
         }
-    }
+        else {
+            $_SESSION['error'] =  "error";
+            header("location: admin.php");
+            exit();
+        }
+
  ?>

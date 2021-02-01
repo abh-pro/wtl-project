@@ -26,7 +26,7 @@
             header('Location: index.php#contact');
             exit();
         }
-        if (!filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION['error'] = "Enter valid email";
             header('Location: index.php#contact');
             exit();
@@ -38,13 +38,20 @@
 
             //insert query
             $sql = "INSERT INTO contact(name,phone,email,msg) VALUES (?,?,?,?)";
-            $stmt= $pdo->prepare($sql);
-            $stmt->execute([$name, $phone, $email, $msg]);
+            $stmt= $conn->prepare($sql);
+            $stmt->execute([$name, $phone, $email, $message]);
+            $_SESSION['success'] = 'Submitted successfully';
+            header('Location: index.php#contact');
+            exit();
         } catch(PDOException $e) {
             $_SESSION['error'] =  $e->getMessage();
             header('Location: index.php#contact');
             exit();
         }
     }
-    $conn=null;
+    else {
+        $_SESSION['error'] =  'error';
+        header('Location: index.php#contact');
+        exit();
+    }
  ?>

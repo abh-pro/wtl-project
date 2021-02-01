@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $servername = "localhost";
     $dbname = "wtl";
     $username = "root";
@@ -42,6 +42,18 @@
                 <?php include('Header.php') ?>
             </div>
         </header>
+        <div class="error float-right">
+            <?php if (isset($_SESSION['error'])) {
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+            } ?>
+        </div>
+        <div class="success float-right">
+            <?php if (isset($_SESSION['success'])) {
+                echo $_SESSION['success'];
+                unset($_SESSION['success']);
+            } ?>
+        </div>
 
         <!--Content-->
         <?php if (isset($facts)) {

@@ -43,7 +43,7 @@
                                 <?php if (isset($_SESSION['username'])) {
                                     ?>
                                     <ul class="Links_footer">
-                                        <li> <a href="Facts.php">Facts</a> </li>
+                                        <li> <a href="admin.php">Facts</a> </li>
                                         <li> <a href="feedback.php">Feedback</a> </li>
                                     </ul>
                                     <?php

@@ -9,7 +9,6 @@
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $id=$_POST['id'];
-        echo $id;
         $facts = $conn->query("SELECT * FROM facts where id=$id")->fetchAll();
 
     } catch(PDOException $e) {
@@ -40,7 +39,8 @@
         <!--NavBar-->
         <header>
             <div class="header-top">
-                <?php session_start(); include('Header.php') ?>
+                <?php session_start(); include('Header.php');
+                ?>
             </div>
         </header>
         <div id="booktable" class="contact">
@@ -65,7 +65,7 @@
                                             <input class="contactus" placeholder="Heading" type="text" name="heading" value="<?php echo $fact['heading']; ?>" required>
                                         </div>
                                         <div class="col-sm-12">
-                                            <textarea class="contactus" placeholder="Description" name="desc" value="<?php echo $fact['descp']; ?>"  required></textarea>
+                                            <textarea class="contactus" placeholder="Description" name="descp" required><?php echo $fact['descp'] ?></textarea>
                                         </div>
                                         <div class="col-sm-12">
                                         <!--    <input class="contactus" type="file" name="image" required>-->

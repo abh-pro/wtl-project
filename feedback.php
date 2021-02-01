@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $servername = "localhost";
     $dbname = "wtl";
     $username = "root";
@@ -9,7 +9,7 @@
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $facts = $conn->query("SELECT * FROM facts")->fetchAll();
+        $facts = $conn->query("SELECT * FROM contact")->fetchAll();
 
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
@@ -44,34 +44,28 @@
         </header>
 
         <!--Content-->
-        <?php if (isset($facts)) {
-            foreach ($facts as $fact) {
-
-            ?>
-            <div id="blog" class="how_it">
-                <div class="container-fluid paddimg_ouu">
-                    <div class="row">
-
-                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 padding-right1">
-                            <div class="two-box">
-                                <figure><img src="images/<?php echo $fact['image']; ?>" alt="#" /></figure>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 padding-left1">
-                            <div class="two-box_text">
-
-                                <div class="travel">
-
-                                    <h3><?php echo $fact['heading']; ?></h3>
-                                    <p><?php echo $fact['descp']; ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-10 offset-md-1">
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($facts as $fact): ?>
+                            <tr>
+                                <th scope="row"><?php echo $fact['id']; ?></th>
+                                <td><?php echo $fact['name']; ?></td>
+                                <td><?php echo $fact['email']; ?></td>
+                                <td><?php echo $fact['msg']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                </table>
             </div>
-        <?php }} ?>
 
         <!--Footer-->
         <?php include('Footer.php') ?>
