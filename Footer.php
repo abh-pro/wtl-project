@@ -20,10 +20,10 @@
                             <div class="address">
                                 <h3>Menu</h3>
                                 <ul class="Menu_footer">
-                                    <li class="active"> <a href="index.html">Home</a> </li>
-                                    <li> <a href="#">About</a> </li>
-                                    <li> <a href="#">Games</a> </li>
-                                    <li> <a href="#"> Contact Us</a> </li>
+                                    <li class="active"> <a href="index.php">Home</a> </li>
+                                    <li> <a href="index.php#about">About</a> </li>
+                                    <li> <a href="index.php#games">Games</a> </li>
+                                    <li> <a href="index.php#contact"> Contact Us</a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -33,7 +33,6 @@
                                 <ul class="Links_footer">
                                     <li> <a href="index.html">Typing Test </a> </li>
                                     <li> <a href="#">Memory Game</a> </li>
-                                    <li> <a href="#">Situation Test</a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -43,8 +42,9 @@
                                 <?php if (isset($_SESSION['username'])) {
                                     ?>
                                     <ul class="Links_footer">
-                                        <li> <a href="admin.php">Facts</a> </li>
-                                        <li> <a href="feedback.php">Feedback</a> </li>
+                                        <li> <a href="admin.php">Update Fact</a> </li>
+                                        <li> <a href="feedback.php">Feedbacks</a> </li>
+                                        <li> <a href="logout.php">Logout</a> </li>
                                     </ul>
                                     <?php
                                 }

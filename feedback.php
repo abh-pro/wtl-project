@@ -9,7 +9,14 @@
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $facts = $conn->query("SELECT * FROM contact")->fetchAll();
+        if (isset($_SESSION['search'])) {
+            $facts = $_SESSION['facts'];
+            unset($_SESSION['search']);
+        }
+        else {
+            $facts = $conn->query("SELECT * FROM contact")->fetchAll();
+        }
+
 
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
@@ -45,6 +52,26 @@
 
         <!--Content-->
             <div class="col-md-10 offset-md-1">
+                <form class="" action="search.php" method="post">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input class="contactus mr-3" placeholder="Enter email" type="text" name="email" minlength="3" required><button type="submit" class="btn btn-info pl-2 ml-auto">Search</button>
+                            <div class="error float-right">
+                                <?php if (isset($_SESSION['error'])) {
+                                    echo $_SESSION['error'];
+                                    unset($_SESSION['error']);
+                                } ?>
+                            </div>
+                            <div class="success float-right">
+                                <?php if (isset($_SESSION['success'])) {
+                                    echo $_SESSION['success'];
+                                    unset($_SESSION['success']);
+                                } ?>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br>
                 <table class="table table-striped">
                         <thead>
                             <tr>
@@ -55,14 +82,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($facts as $fact): ?>
+                        <?php
+                        if (isset($facts)) {
+
+
+                         foreach ($facts as $fact): ?>
                             <tr>
                                 <th scope="row"><?php echo $fact['id']; ?></th>
                                 <td><?php echo $fact['name']; ?></td>
-                                <td><?php echo $fact['email']; ?></td>
+                                <td><a style="color:blue;" href="mailto:<?php echo $fact['email']; ?>"><?php echo $fact['email']; ?></a></td>
                                 <td><?php echo $fact['msg']; ?></td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endforeach; }
+                        else {
+                            ?>
+                            <tr>
+                                <th scope="row">No records found.</th>
+                            </tr>
+
+                            <?php
+                        }?>
                         </tbody>
                 </table>
             </div>

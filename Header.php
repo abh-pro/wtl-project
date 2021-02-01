@@ -18,7 +18,7 @@
                                 <li> <a href="index.php">Home</a> </li>
                                 <li> <a href="index.php#about">About</a> </li>
                                 <li> <a href="index.php#games">Brain Games</a> </li>
-                                <li> <a href="Facts.php">Facts</a> </li>
+                                <li> <a href="Facts.php">Daily Fact</a> </li>
                                 <li> <a href="index.php#contact">Contact US</a> </li>
                             </ul>
                         </nav>
